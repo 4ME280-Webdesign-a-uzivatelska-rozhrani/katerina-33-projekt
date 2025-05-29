@@ -1,0 +1,228 @@
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #F2E8CF;
+  margin: 0;
+  padding: 20px;
+}
+
+h1, h2 {
+    color: #386641;
+}
+#plants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  width: 200px;
+  background-color: #ffffff22;
+}
+
+#garden {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 30px; /* větší mezera mezi květinami */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #ffffff22;
+}
+
+
+.plant-card img {
+    width: 100%;
+    border-radius: 4px;
+}
+button {
+    background: #66bb6a;
+    color: white;
+    border: none;
+    padding: 8px;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+#search {
+    display: none;
+    padding: 12px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    display: block;
+}
+#search-results {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+.plant-card {
+    width: 100%;
+    max-width: 180px;
+    background: #F2E8CF;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.hidden {
+    display: none !important;
+}
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #F2E8CF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    overflow: hidden;
+}
+.leaves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+.leaf {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fall linear infinite;
+}
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+#auth-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #F2E8CF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10000;
+}
+#auth-screen input {
+    padding: 10px;
+    margin: 5px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#auth-screen button {
+    width: 260px;
+    margin: 5px;
+}
+.reminder-list {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 250px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+}
+.reminder-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.reminder-card p {
+    margin: 0;
+    font-size: 14px;
+}
+.reminder-card button {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.reminder-card button:hover {
+    background-color: #ff1a1a;
+}
+
+.reminder-list h3 {
+  margin-top: 0;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.color-cycle-announcement {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  animation: colorCycle 3s infinite;
+}
+
+@keyframes colorCycle {
+  0%   { color: #386641; }
+  25%  { color: #6a994e; }
+  50%  { color: #f2e8cf; }
+  75%  { color: #bc4749; }
+  100% { color: #386641; }
+}
+
+.falling-images {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.falling-img {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  opacity: 0.2;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: fallImage linear infinite;
+}
+
+@keyframes fallImage {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.2;
+  }
+}

@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zalito</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="auth-screen">
+        <h2>Přihlášení</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Heslo">
+        <button onclick="login()">Přihlásit se</button>
+        <button onclick="register()">Registrovat se</button>
+    </div>
+
+    <div id="main-content" style="display:none;">
+        <h1>Zalito</h1>
+      
+
+        <div id="add-plant-form">
+            <h2>Přidat rostlinu</h2>
+            <input type="text" id="plant-name" placeholder="Název rostliny">
+            <input type="text" id="plant-note" placeholder="Poznámka">
+            <select id="plant-icon">
+                <option value="🌿">🌿</option>
+                <option value="🪴">🪴</option>
+                <option value="🌱">🌱</option>
+                <option value="☘️">☘️</option>
+                <option value="🥬">🥬</option>
+                <option value="🌾">🌾</option>
+                <option value="🌵">🌵</option>
+            </select>
+            <input type="color" id="plant-color" value="#F2E8CF">
+            <button onclick="addPlant()">Přidat rostlinu</button>
+        </div>
+
+        <section id="my-garden">
+            <h2>Moje zahrádka</h2>
+            <div id="garden"></div>
+        </section>
+
+        <div class="reminder-list" id="reminders">
+  <h3>Připomínkový blok</h3>
+</div>
+
+
+        <button onclick="logout()">Odhlásit se</button>
+    </div>
+
+    <div class="leaves"></div>
+    <script src="script.js"></script>
+    <div class="color-cycle-announcement">
+  Vyhledávání v databázi rostlin s detailními informacemi – coming soon!
+</div>
+<div class="falling-images"></div>
+
+</body>
+</html>
